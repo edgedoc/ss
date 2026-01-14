@@ -192,7 +192,7 @@ Wants=network.target
 [Service]
 Type=simple
 PIDFile=/var/run/shadowsocks-go.pid
-ExecStart=/usr/bin/shadowsocks-go/shadowsocks-go -s "ss://${ssciphers}:${sspass}@:${ssport}"
+ExecStart=/usr/bin/shadowsocks-go/shadowsocks-go -udp -s "ss://${ssciphers}:${sspass}@:${ssport}"
 RestartSec=3
 Restart=always
 LimitNOFILE=1048576
