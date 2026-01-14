@@ -18,7 +18,7 @@ _ss_tmp_gz="/tmp/ss-tmp/shadowsocks-go.gz"
 _ss_dir='/usr/bin/shadowsocks-go'
 _ss_file='/usr/bin/shadowsocks-go/shadowsocks-go'
 _ss_sh="/usr/local/sbin/ssgo"
-_ss_sh_link="https://raw.githubusercontent.com/233boy/ss/master/ss.sh"
+_ss_sh_link="https://raw.githubusercontent.com/edgedoc/ss/refs/heads/master/ss.sh"
 backup='/usr/bin/shadowsocks-go/backup.conf'
 
 # 笨笨的检测方法
