@@ -99,7 +99,7 @@ Selectcipher() {
  	  echo -e "${GREEN}${i}${PLAIN}) ${hint}"
     done
     read -p "请选择加密[1-4] (默认: ${cipher[3]}):" pick
-    [ -z "$pick" ] && pick=1
+    [ -z "$pick" ] && pick=4
     expr ${pick} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
 	  colorEcho $RED "错误, 请选择[1-4]"
@@ -178,8 +178,8 @@ EOF
 }
 
 Set_port(){
-    read -p $'请输入 SS 端口 [1-65535]\n(默认: 6666，回车): ' PORT
-    [[ -z "${PORT}" ]] && PORT="6666"
+    read -p $'请输入 SS 端口 [1-65535]\n(默认: 3060，回车): ' PORT
+    [[ -z "${PORT}" ]] && PORT="3060"
     echo $((${PORT}+0)) &>/dev/null
     if [[ $? -eq 0 ]]; then
 	  if [[ ${PORT} -ge 1 ]] && [[ ${PORT} -le 65535 ]]; then
@@ -196,8 +196,8 @@ Set_port(){
 }
 
 Set_pass(){
-    read -p $'请输入 SS 密码\n(推荐随机生成，直接回车): ' PASS
-    [[ -z "${PASS}" ]] && PASS=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
+    read -p $'请输入 SS 密码\n(默认密码，直接回车): ' PASS
+    [[ -z "${PASS}" ]] && PASS="@"
     colorEcho $BLUE "PASS: ${PASS}"
     echo ""
 }
