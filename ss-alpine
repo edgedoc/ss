@@ -98,15 +98,15 @@ Selectcipher() {
  	  hint="${cipher[$i-1]}"
  	  echo -e "${GREEN}${i}${PLAIN}) ${hint}"
     done
-    read -p "请选择加密[1-3] (默认: ${cipher[0]}):" pick
+    read -p "请选择加密[1-4] (默认: ${cipher[3]}):" pick
     [ -z "$pick" ] && pick=1
     expr ${pick} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
-	  colorEcho $RED "错误, 请选择[1-3]"
+	  colorEcho $RED "错误, 请选择[1-4]"
 	  selectcipher
     fi
     if [[ "$pick" -lt 1 || "$pick" -gt ${#cipher[@]} ]]; then
-	  colorEcho $RED "错误, 请选择[1-3]"
+	  colorEcho $RED "错误, 请选择[1-4]"
 	  selectcipher
     fi
     cipher=${cipher[$pick-1]}
